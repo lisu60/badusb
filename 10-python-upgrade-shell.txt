@@ -1,0 +1,19 @@
+STRING python -c 'import pty; pty.spawn("/bin/bash")'
+ENTER
+STRING python3 -c 'import pty; pty.spawn("/bin/bash")'
+ENTER
+CTRL z
+STRING stty -echo raw
+ENTER
+STRING fg
+ENTER
+DELAY 500
+STRING export TERM=xterm-256color
+ENTER
+STRING export SHELL=bash
+ENTER
+STRING reset
+ENTER
+DELAY 2000
+STRING stty rows 36 cols 153
+ENTER
